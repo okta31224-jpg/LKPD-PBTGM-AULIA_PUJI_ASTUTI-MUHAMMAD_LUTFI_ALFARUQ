@@ -561,3 +561,58 @@ body {
     text-align: center;
   }
 }
+/* ==========================================================
+   Tambahan: hero actions, statistik, bidang, manfaat, alur, FAQ, CTA
+   ========================================================== */
+.hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.header .btn-cta, .cta-akhir .btn-cta { background: #0284c7; }
+.header .btn-cta:hover, .cta-akhir .btn-cta:hover { box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5); }
+.btn-ghost { display: inline-block; padding: 16px 32px; font-size: 1.05rem; font-weight: 700; color: #e2e8f0; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 99px; transition: background 0.25s ease; }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); }
+.btn-ghost:focus-visible, .btn-cta:focus-visible, .faq-item summary:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+
+.stats { background: #0b1220; padding: 36px 6%; border-top: 1px solid rgba(255,255,255,0.06); }
+.stats-isi { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+.stats-isi strong { display: block; font-size: 2.6rem; font-weight: 800; color: #38bdf8; line-height: 1.1; }
+.stats-isi span { display: block; margin: 6px auto 0; max-width: 240px; font-size: 0.9rem; color: #94a3b8; }
+
+.sec { padding: 80px 6%; }
+.sec-putih { background: #ffffff; }
+.sec-abu { background: #f1f5f9; }
+.sec-judul { text-align: center; font-size: 2.1rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+.sec .subtitle { margin-bottom: 40px; }
+
+.bidang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+.bidang { padding: 24px 22px; background: var(--ekskul-bg-start); border-left: 5px solid var(--accent); border-radius: 6px 16px 16px 6px; }
+.bidang h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.bidang p { font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.bidang small { display: block; font-size: 0.85rem; color: #475569; line-height: 1.5; }
+
+.manfaat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 40px; }
+.manfaat { padding: 22px 0; border-top: 2px solid #cbd5e1; }
+.manfaat h3 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.manfaat p { color: #475569; font-size: 0.95rem; }
+
+.alur { list-style: none; counter-reset: langkah; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.alur li { counter-increment: langkah; position: relative; padding: 64px 22px 24px; background: var(--field); border: 1px solid var(--line); border-radius: 16px; }
+.alur li::before { content: counter(langkah); position: absolute; top: 18px; left: 22px; width: 34px; height: 34px; display: grid; place-items: center; font-weight: 800; color: #fff; background: var(--accent); border-radius: 50%; }
+.alur h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.alur p { font-size: 0.9rem; color: #475569; }
+
+.faq-wrap { max-width: 760px; }
+.faq-item { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+.faq-item summary { cursor: pointer; list-style: none; padding: 18px 56px 18px 22px; position: relative; font-weight: 700; color: #0f172a; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--accent); }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { padding: 0 22px 20px; color: #475569; font-size: 0.95rem; }
+
+.cta-akhir { padding: 80px 6%; text-align: center; color: #fff; background: linear-gradient(180deg, var(--header-bg-end) 0%, var(--header-bg-start) 100%); }
+.cta-isi h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+.cta-isi p { color: #94a3b8; margin-bottom: 28px; }
+
+@media (max-width: 600px) {
+  .stats-isi { grid-template-columns: 1fr; }
+  .sec { padding: 56px 6%; }
+  .sec-judul, .cta-isi h2 { font-size: 1.7rem; }
+}
